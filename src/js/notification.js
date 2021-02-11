@@ -20,25 +20,26 @@ defaults.styling = 'material';
 // This icon setting requires the Material Icons font. (See below.)
 defaults.icons = 'material';
 
-// Manually set the type.
-const myAlert = alert({
-  text: "I'm an alert.",
-  type: 'info',
-});
+// // Manually set the type.
+// const myAlert = alert({
+//   text: "I'm an alert.",
+//   type: 'info',
+// });
 
-// Automatically set the type.
-const myNotice = notice({
-  text: "I'm a notice.",
-});
+// // Automatically set the type.
+// const myNotice = notice({
+//   text: "I'm a notice.",
+// });
 
-const myInfo = info({
-  text: "I'm an info message.",
-});
+// const myInfo = info({
+//   text: "I'm an info message.",
+// });
 
 const mySuccess = success({
-  text: "I'm a success message.",
+  text: 'Success message. You find country!',
 });
 
 const myError = error({
-  text: "I'm an error message.",
+  text:
+    'Error message! Too many matches found. Please enter a more specific query!',
 });

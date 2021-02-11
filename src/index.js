@@ -20,6 +20,6 @@ refs.searchInput.addEventListener(
 
     refs.countriesContainer.innerHTML = '';
 
-    fetchCountries(inputValue).then(updateCountriesMarkup);
+    fetchCountries(inputValue).then(data => updateCountriesMarkup(data));
   }, 500),
 );
