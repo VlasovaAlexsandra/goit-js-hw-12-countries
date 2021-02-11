@@ -27,3 +27,7 @@ input {
 .search {
   text-align: center;
 }
+
+li {
+  list-style: none;
+}

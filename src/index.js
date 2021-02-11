@@ -11,12 +11,15 @@ const refs = {
   searchInput: document.querySelector('.js-searchInput'),
 };
 
-refs.searchInput.addEventListener('input', event => {
-  event.preventDefault();
+refs.searchInput.addEventListener(
+  'input',
+  debounce(event => {
+    event.preventDefault();
 
-  const inputValue = event.target.value;
+    const inputValue = event.target.value;
 
-  refs.countriesContainer.innerHTML = '';
+    refs.countriesContainer.innerHTML = '';
 
-  fetchCountries(inputValue).then(updateCountriesMarkup);
-});
+    fetchCountries(inputValue).then(updateCountriesMarkup);
+  }, 500),
+);
