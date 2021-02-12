@@ -1,6 +1,6 @@
 const debounce = require('lodash.debounce');
 
-import './js/notification';
+// import './js/notification';
 import './styles.css';
 
 import fetchCountries from './js/fetchCountries';

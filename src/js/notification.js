@@ -10,7 +10,7 @@ import { defaults } from '@pnotify/core';
 import '@pnotify/core/dist/Material.css';
 
 // import { alert, notice, info, success, error } from '@pnotify/core';
-const { notice, info, success, error } = require('@pnotify/core');
+// const { notice, info, success, error } = require('@pnotify/core');
 
 defaultModules.set(PNotifyMobile, {});
 
@@ -35,11 +35,11 @@ defaults.icons = 'material';
 //   text: "I'm an info message.",
 // });
 
-const mySuccess = success({
-  text: 'Success message. You find country!',
-});
+// const mySuccess = success({
+//   text: 'Success message. You find country!',
+// });
 
-const myError = error({
-  text:
-    'Error message! Too many matches found. Please enter a more specific query!',
-});
+// const myError = error({
+//   text:
+//     'Error message! Too many matches found. Please enter a more specific query!',
+// });
