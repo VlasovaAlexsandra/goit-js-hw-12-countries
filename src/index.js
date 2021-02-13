@@ -1,8 +1,9 @@
-const debounce = require('lodash.debounce');
-
-// import './js/notification';
 import './styles.css';
 
+import '@pnotify/core/dist/BrightTheme.css'; // стилизиция сообщений
+import { alert } from '@pnotify/core'; // импорт требуемых функций для отображения нотификации
+
+import debounce from 'lodash.debounce';
 import fetchCountries from './js/fetchCountries';
 import updateCountriesMarkup from './js/update-countries-markup';
 
@@ -11,15 +12,22 @@ const refs = {
   searchInput: document.querySelector('.js-searchInput'),
 };
 
-refs.searchInput.addEventListener(
-  'input',
-  debounce(event => {
-    event.preventDefault();
+refs.searchInput.addEventListener('input', debounce(loadCountries, 500));
 
-    const inputValue = event.target.value;
+function loadCountries(event) {
+  event.preventDefault(); // event.target - это наш "инпут" в котором произошло событие
 
-    refs.countriesContainer.innerHTML = '';
+  const inputValue = event.target.value.trim(); // удаляем пробелы из содержащегося в нем текста
 
+  refs.countriesContainer.innerHTML = '';
+
+  if (inputValue) {
+    // если ничего не ввели - лучше запрос вообще не делать
     fetchCountries(inputValue).then(data => updateCountriesMarkup(data));
-  }, 500),
-);
+  } else {
+    alert({
+      text: 'Please enter country name',
+      type: 'info',
+    });
+  }
+}
